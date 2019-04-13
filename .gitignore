@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+target/.idea/bounty.iml
+/.idea
+=======
+target/
+.idea/
+bounty.iml
+>>>>>>> 683426a0dccc491538a37070b7cd2ecf0c548ade

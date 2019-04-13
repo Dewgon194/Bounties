@@ -1,0 +1,9 @@
+name: PlaceBounty
+version: 1.0
+main: com.duggan.bounty.Main
+api-version: 1.13
+author: Duggan
+description: Allows players to place cash bounties on others
+commands:
+  wanted:
+  placebounty:
