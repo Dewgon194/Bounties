@@ -30,7 +30,7 @@ public class Bounties {
             bountyTotal = bountyTotal + valuepp;
 
         }
-        System.out.println(bountyTotal);
+        ;
         return bountyTotal;
     }
 
