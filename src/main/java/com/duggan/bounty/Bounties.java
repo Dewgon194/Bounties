@@ -56,7 +56,7 @@ public class Bounties {
     public void bountyPlacers(String bounty) {
         for (String id : plugin.getConfig().getConfigurationSection("bounties." + bounty + ".").getKeys(false)) {
             if (Bukkit.getPlayer(UUID.fromString(id)) != null) {
-                Bukkit.getPlayer(UUID.fromString(id)).sendMessage(ChatColor.AQUA + "Your bounty on " + ChatColor.GREEN + Bukkit.getPlayer(UUID.fromString(bounty)).getName() + "has been fulfilled." );
+                Bukkit.getPlayer(UUID.fromString(id)).sendMessage(ChatColor.AQUA + "Your bounty on " + ChatColor.GREEN + Bukkit.getPlayer(UUID.fromString(bounty)).getName() + ChatColor.AQUA + " has been fulfilled." );
             }
         }
     }
