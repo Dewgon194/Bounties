@@ -19,7 +19,8 @@ import java.util.UUID;
 public class Gui implements CommandExecutor {
 
     private Bounties bounties;
-    public Gui(Bounties bounties){
+
+    public Gui(Bounties bounties) {
         this.bounties = bounties;
     }
 
@@ -29,7 +30,7 @@ public class Gui implements CommandExecutor {
         Integer check = 0;
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
 
-        for (String p : bounties.bountyPlayers()){
+        for (String p : bounties.bountyPlayers()) {
             ArrayList<String> lore = new ArrayList<>();
             lore.add(ChatColor.GREEN + "$" + bounties.getTotal(Bukkit.getPlayerExact(p).getUniqueId().toString()));
             ItemStack skull = SkullCreator.withName(item, p);
@@ -44,7 +45,6 @@ public class Gui implements CommandExecutor {
             player.openInventory(inv);
         }
         SkullCreator.withName(item, "Bob");
-
 
 
         return true;

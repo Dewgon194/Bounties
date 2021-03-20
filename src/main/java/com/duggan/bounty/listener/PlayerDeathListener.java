@@ -1,6 +1,7 @@
 package com.duggan.bounty.listener;
 
 import com.duggan.bounty.Bounties;
+import com.duggan.bounty.Main;
 import com.duggan.bounty.Utils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -11,11 +12,13 @@ import org.bukkit.event.entity.PlayerDeathEvent;
 public class PlayerDeathListener implements Listener {
 
     private Bounties bounties;
-    public PlayerDeathListener(Bounties bounties){
+
+    public PlayerDeathListener(Bounties bounties) {
         this.bounties = bounties;
     }
+
     @EventHandler
-    public void bountyKill(PlayerDeathEvent e){
+    public void bountyKill(PlayerDeathEvent e) {
         Player player = e.getEntity();
         String bounty = e.getEntity().getUniqueId().toString();
         Player killer = e.getEntity().getKiller();
@@ -23,12 +26,10 @@ public class PlayerDeathListener implements Listener {
             Player bountyKiller = killer;
             if (bounties.getTotal(bounty) > 0) {
                 Utils.giveMoney(bountyKiller.getName(), bounties.getTotal(bounty));
-                killer.sendMessage(ChatColor.AQUA + "You fulfilled a bounty and earned "+ChatColor.GREEN + "$" + bounties.getTotal(bounty));
+                killer.sendMessage(ChatColor.AQUA + "You fulfilled a bounty and earned " + ChatColor.GREEN + "$" + bounties.getTotal(bounty));
                 bounties.bountyPlacers(bounty);
                 bounties.configDelete(bounty);
-
             }
-
 
 
         }
