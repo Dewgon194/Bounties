@@ -11,10 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.inventory.meta.SkullMeta;
-
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class Gui implements CommandExecutor {
 
@@ -25,11 +22,9 @@ public class Gui implements CommandExecutor {
     }
 
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
         Inventory inv = Bukkit.createInventory(null, 54, "Wanted");
         Integer check = 0;
         ItemStack item = new ItemStack(Material.PLAYER_HEAD);
-
         for (String p : bounties.bountyPlayers()) {
             ArrayList<String> lore = new ArrayList<>();
             lore.add(ChatColor.GREEN + "$" + bounties.getTotal(Bukkit.getPlayerExact(p).getUniqueId().toString()));
@@ -40,12 +35,10 @@ public class Gui implements CommandExecutor {
             skull.setItemMeta(skullMeta);
             inv.setItem(check, skull);
             check++;
-
             Player player = (Player) sender;
             player.openInventory(inv);
         }
         SkullCreator.withName(item, "Bob");
-
 
         return true;
     }

@@ -15,8 +15,6 @@ public class Main extends JavaPlugin {
         getCommand("wanted").setExecutor(new Gui(new Bounties()));
         System.out.println(ChatColor.AQUA + "Bounty is enabled");
         instance = this;
-
-
     }
 
     private static Main instance;
