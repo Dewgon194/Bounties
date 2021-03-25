@@ -3,7 +3,6 @@ package com.duggan.bounty;
 import com.earth2me.essentials.api.Economy;
 import com.earth2me.essentials.api.NoLoanPermittedException;
 import com.earth2me.essentials.api.UserDoesNotExistException;
-
 import java.math.BigDecimal;
 
 public class Utils {
